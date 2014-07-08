@@ -3,7 +3,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Desktop;
-import java.awt.Dimension;
+
 import java.awt.FlowLayout;
 import java.awt.SystemColor;
 import java.awt.TextArea;
@@ -23,26 +23,16 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 import javax.swing.AbstractButton;
-import javax.swing.BorderFactory;
-import javax.swing.BoxLayout;
 import javax.swing.ButtonModel;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
-import javax.swing.JComponent;
-import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JProgressBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.SwingConstants;
-import javax.swing.SwingUtilities;
-import javax.swing.UIDefaults;
-import javax.swing.border.BevelBorder;
-import javax.swing.border.Border;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -51,7 +41,7 @@ import main.Steps;
 
 
 public class PorjectDan implements  ActionListener {
-	private static final String String = null;
+	
 	private String arr[][]=new String[5][2];
 	private int loc[]=new int[5];
 	private int loc1111[]=new int[5];
@@ -90,7 +80,6 @@ public class PorjectDan implements  ActionListener {
 	private static String DESELECTED_LABEL = "if you want to learn more";
 	private static String SELECTED_LABEL = "thank about this you dont see thos more";
 	File file111;
-	//File file;
 	String fileontology,filestepFile,fileontologyStatus;
 	private boolean le=false;
 	private boolean lookresult=false;
@@ -98,7 +87,7 @@ public class PorjectDan implements  ActionListener {
 
 
 	public JPanel createContentPane (){
-		//createAndShowGUI();
+		
 		try {
 			writeLog();
 		} catch (FileNotFoundException e) {
@@ -111,7 +100,7 @@ public class PorjectDan implements  ActionListener {
 		inint3();
 		checkLerana();//if was learn
 		readres();//read res
-		//checkREprin();
+		
 		def();//defenition
 		checktwo();//
 		shorting();//short
@@ -156,8 +145,6 @@ public class PorjectDan implements  ActionListener {
 		
 		Option = new JLabel();
 		Option.setText("OPTIONS:");
-		//input.setl(true);
-		//input.set);
 		Option.setForeground(Color.GREEN);
 		Option.setLayout(null);
 		Option.setLocation(450, 0);
@@ -208,7 +195,7 @@ public class PorjectDan implements  ActionListener {
 		pathPro.addActionListener(this);
 		buttonPanel.add(pathPro);
 
-		saveAs = new JButton("Out Put");
+		saveAs = new JButton("Out Put()");
 		saveAs.setLocation(0,loc[1]);
 		if(le)
 			saveAs.setLocation(0,loc22[1]);
@@ -342,7 +329,7 @@ public class PorjectDan implements  ActionListener {
 		buttonPanel.add(stepFilelink);
 
 		learshkuf = new JButton("LINK OUT FILE");
-		learshkuf.setLocation(400, 250);
+		learshkuf.setLocation(400, 200);
 
 		learshkuf.setSize(150, 30);
 
@@ -354,21 +341,14 @@ public class PorjectDan implements  ActionListener {
 		learshkuf.setBorderPainted(false);
 		
 		buttonPanel.add(learshkuf);
-		
-		
+	
 		clearlog = new JButton("CLEAR LOG");
 		clearlog.setLocation(400, 200);
 
 		clearlog.setSize(150, 30);
-
 		clearlog.addActionListener(this);
-		//clearlog.setForeground(Color.GREEN);
-		
 		clearlog.setEnabled(false);
-		
-		
-		buttonPanel.add(clearlog);
-		//lookresult=true;
+
 		if(lookresult){
 			//readarray();
 			clearlog.setEnabled(true);
@@ -379,16 +359,11 @@ public class PorjectDan implements  ActionListener {
 			ontologyStatuslink.setEnabled(true);
 			pathProlink.setEnabled(true);
 			saveAslink.setEnabled(true);
-			//pathProlink.setLocation(0, loc22[1]);
-			//saveAslink.setLocation(0,  loc22[0]);
 			start.setEnabled(true);
 			clearresu.setEnabled(true);
 			clearAll.setEnabled(true);
 			
-			
-			
 			readresult();
-			//checkREprin();
 		}
 
 
@@ -432,31 +407,11 @@ public class PorjectDan implements  ActionListener {
 					while((s = in.readLine()) != null){
 						arr[o][0] = s;
 						o++;
-						//if(!aaaa.equals(" "))
-							//result=result+aaaa+'\n';
-						
-						
-					//	JOptionPane.showMessageDialog(null, result);
 					}
 					in.close();
 				}catch(Exception e){
 					e.printStackTrace();
 				}
-				//in.close();
-
-		
-	}
-
-	private void spliteLine() {
-		// TODO Auto-generated method stub
-		String lines[] = result.split("\\r?\\n");
-		for(int yyyy=0;yyyy<lines.length;yyyy++){
-			//checkREprin(lines[yyyy]);
-		}
-		//JOptionPane.showMessageDialog(null, lines[0]);
-		///JOptionPane.showMessageDialog(null, lines[1]);
-		
-		
 	}
 
 	private void def() {
@@ -528,8 +483,7 @@ public class PorjectDan implements  ActionListener {
 	}
 
 	private void readresult() {
-		// TODO Auto-generated method stub
-		// TODO Auto-generated method stub
+		
 		BufferedReader in;
 		
 		result="";
@@ -548,7 +502,6 @@ public class PorjectDan implements  ActionListener {
 				}else{
 					lineError++;
 				
-				//JOptionPane.showMessageDialog(null, "no show:  " + lineError);
 				}
 			}
 				
@@ -557,9 +510,7 @@ public class PorjectDan implements  ActionListener {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-		//in.close();
-		//JOptionPane.showMessageDialog(null,"num  " +  countersum);
-		//countersum;
+		
 	}
 
 	private void inint3() {
@@ -583,25 +534,21 @@ public class PorjectDan implements  ActionListener {
 		// TODO Auto-generated method stub
 		Scanner s = null;
 		try {
-			//notice the path is fully qualified path
+			
 			try {
 				s = new Scanner(new File("learn"));
-				//JOptionPane.showMessageDialog(null,  "yes:goooddddd ");
-				//check=1;
+				
 				check=s.nextLine();
 				if(check.equals("true"))
 					le=true;
 				if(check.equals("false"))
 					le=false;
-				//s.close();
-				//JOptionPane.showMessageDialog(null,  check);
+			
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			while (s.hasNext()) {
-				
-
 			}
 		} finally {
 			if (s != null) {
@@ -630,26 +577,18 @@ public class PorjectDan implements  ActionListener {
 		int vv=0;
 		System.out.println(Arrays.asList(arrr));
 		for (int number : arrr) {
-
 			newarrr[vv][0]=Integer.toString(number);
 			// System.out.println("Number = " + number);
 			vv+=1; 
 		}
-
 	}
-
-
-
 
 	private int readcounter(String  val) {
 		// TODO Auto-generated method stub
 		Scanner ss = null;
 		try {
-			//notice the path is fully qualified path
 			try {
-
 				ss = new Scanner(new File(val));
-
 				check=ss.nextLine();
 				danadn=Integer.parseInt(check);
 
@@ -672,13 +611,9 @@ public class PorjectDan implements  ActionListener {
 		// TODO Auto-generated method stub
 		for(int w=0;w<5;w++){
 			arr[w][0]="";
-
 			inti2();
-
 		}
 	}
-
-
 
 	private void inti2() {
 		for(int w=0;w<5;){
@@ -768,31 +703,10 @@ public class PorjectDan implements  ActionListener {
 				file = file.toUpperCase();
 				ckeckstart();
 				clearAll.setEnabled(true);
-				//JOptionPane.showMessageDialog(null, arr[0][0], "arr[0]0]", JOptionPane.QUESTION_MESSAGE);
+				
 				 
 			}
-			//JFrame frame = new JFrame("JOptionPane showMessageDialog example");
 			
-			/*final JFileChooser fc = new JFileChooser(david);
-			JList list = new JList();
-			fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-			if (JFileChooser.APPROVE_OPTION == fc.showOpenDialog(list)) {
-				file = fc.getSelectedFile().toString()+"/";
-				arr[1][0]=file;
-				//JOptionPane.showMessageDialog(null, arr[0][0], "arr[0][0]", JOptionPane.QUESTION_MESSAGE);
-				saveAslink.setEnabled(true);
-				arr[1][1]="save file";
-				//JOptionPane.showMessageDialog(null, arr[0][1], "arr[0][1]", JOptionPane.QUESTION_MESSAGE);
-				checkAndSend(file);
-				clearAll.setEnabled(true);
-				ckeckstart();
-				//ckeckclear();
-				//file = fc.getDescription(f);
-			//	JOptionPane.showMessageDialog(null, arr[1][0], "arr[1][0]", JOptionPane.QUESTION_MESSAGE);
-
-				//JOptionPane.showMessageDialog(null, david, david, JOptionPane.QUESTION_MESSAGE);
-			} 
-*/
 
 		}
 		 if(e.getSource() == saveAs)
@@ -812,33 +726,11 @@ public class PorjectDan implements  ActionListener {
 					checkAndSend(file);
 					clearAll.setEnabled(true);
 					ckeckstart();
-					//ckeckclear();
-					//file = fc.getDescription(f);
-				//	JOptionPane.showMessageDialog(null, arr[1][0], "arr[1][0]", JOptionPane.QUESTION_MESSAGE);
-
-					//JOptionPane.showMessageDialog(null, david, david, JOptionPane.QUESTION_MESSAGE);
+					saveAs.setBackground(Color.WHITE);
+					saveAs.setForeground(Color.BLACK);
+					
 				} 
-			/*
-			 clearAll.setEnabled(true);
-			saveOneClick("saveas");
-			final JFileChooser fc1 = new JFileChooser(david);
-			JList list1 = new JList();
-			fc1.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-			String s;
-			if (JFileChooser.APPROVE_OPTION == fc1.showOpenDialog(list1)) {
-				file1 = fc1.getSelectedFile().getName().toLowerCase();
-				arr[0][0]=file1;
-				arr[0][1]="path project";
-				pathProlink.setEnabled(true);
-				checkAndSend(file1);
-				pathProlink.setEnabled(true);
-				file1 = file1.toUpperCase();
-				ckeckstart();
-				clearAll.setEnabled(true);
-				//JOptionPane.showMessageDialog(null, arr[0][0], "arr[0]0]", JOptionPane.QUESTION_MESSAGE);
-				 
-			}
-*/
+			
 
 		}
 		if(e.getSource() == ontology)
@@ -862,9 +754,7 @@ public class PorjectDan implements  ActionListener {
 				checkAndSend(arr[2][0]);
 				ckeckstart();
 				clearAll.setEnabled(true);
-				//ckeckclear();
-				//JOptionPane.showMessageDialog(null, fileontology, "ontology: ", JOptionPane.QUESTION_MESSAGE);
-			//	JOptionPane.showMessageDialog(null, arr[2][0], "arr[2][1]", JOptionPane.QUESTION_MESSAGE);
+				
 			}
 		}
 		if(e.getSource() == ontologyStatus)
@@ -885,9 +775,7 @@ public class PorjectDan implements  ActionListener {
 				checkAndSend(arr[3][0]);
 				ckeckstart();
 
-			//	JOptionPane.showMessageDialog(null, arr[3][0], "arr[3][1]", JOptionPane.QUESTION_MESSAGE);
-				//ckeckclear();
-				//	JOptionPane.showMessageDialog(null, fileontologyStatus, "ntologyStatus: ", JOptionPane.QUESTION_MESSAGE);
+			
 			}
 		}
 		if(e.getSource() == stepFile)
@@ -911,37 +799,18 @@ public class PorjectDan implements  ActionListener {
 				stepFilelink.setText("LInk");
 				ckeckstart();
 				
-			//	JOptionPane.showMessageDialog(null, arr[4][0], "arr[4][1]", JOptionPane.QUESTION_MESSAGE);
-				//clearAll.setEnabled(true);
-				//		JOptionPane.showMessageDialog(null, filestepFile, "stepFile: ", JOptionPane.QUESTION_MESSAGE);
+			
 			}
 		}
 
 		if(e.getSource() == start)
 		{	
-			//JOptionPane.showMessageDialog(null, arr[1][0], "qqq", JOptionPane.ERROR_MESSAGE);
-			//JOptionPane.showMessageDialog(null, arr[2][0], "qqq", JOptionPane.ERROR_MESSAGE);
-			//JOptionPane.showMessageDialog(null, arr[3][0], "qqq", JOptionPane.ERROR_MESSAGE);
-			//JOptionPane.showMessageDialog(null, arr[4][0], "qqq", JOptionPane.ERROR_MESSAGE);
-			result="";
+			
 			
 			resssssss=true;
 			
 			yy=false;
-			//result="dasdasdasdasdasd";
-			//createAndShowGUI();
-			
-			
-					//for(int qqq=0;qqq<5;){
-						//if(arr[qq][0]=="" ){
-						//	JOptionPane.showMessageDialog(null, arr[qq][0], "qqq", JOptionPane.ERROR_MESSAGE);
-						//	qq++;
-						//}	
-				//	asda();
-					//JOptionPane.showMessageDialog(start, "fgdfsgsdfgsdf"," title));
-					//JOptionPane.showMessageDialog(null, file, "file: ", JOptionPane.QUESTION_MESSAGE);
-			
-					//createAndShowGUI();
+			if(arr[1][0].equals("/home/student/Documents/KoDEgen-master/Examples/ATM/features/")){
 					try {
 
 						//                	 ROJECT_NAME                             name of project
@@ -952,17 +821,7 @@ public class PorjectDan implements  ActionListener {
 						//
 						
 						resssssss=true;
-					//	writeres("true");
-						
-						//
-						//String cc=arr[0][0]+'\n' +arr[1][0]+'\n' +arr[2][0]+'\n' +arr[3][0]+'\n' +arr[4][0];
-						//writeArr(cc);
-						//JOptionPane.showMessageDialog(null, arr[0][0], "file: ", JOptionPane.QUESTION_MESSAGE);
-						//JOptionPane.showMessageDialog(null, arr[1][0], "file: ", JOptionPane.QUESTION_MESSAGE);
-						//JOptionPane.showMessageDialog(null, arr[2][0], "file: ", JOptionPane.QUESTION_MESSAGE);
-						//JOptionPane.showMessageDialog(null, arr[3][0], "file: ", JOptionPane.QUESTION_MESSAGE);
-						//JOptionPane.showMessageDialog(null, arr[4][0], "file: ", JOptionPane.QUESTION_MESSAGE);
-						//createAndShowGUI();
+					
 						Steps.main(new String[]{arr[0][0],
 							
 								arr[1][0],
@@ -983,23 +842,11 @@ public class PorjectDan implements  ActionListener {
 					*/	}
 								);
 						
-						//readresult();
-					//	checkREprin();				
-						//_resultArea.setText("dfzsdfzd");
-						//clearresu.setEnabled(true);
-						//learshkuf.setEnabled(true);
-						
-						//createAndShowGUI();
-						//createAndShowGUI();
-						//break;
-						//JOptionPane.showMessageDialog(null, "good","can to play", JOptionPane.INFORMATION_MESSAGE);
-
+					
 					} catch (Exception e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
-						//createAndShowGUI();
-						//JOptionPane.showMessageDialog(null, "no good","error", JOptionPane.ERROR_MESSAGE);
-						//JOptionPane.showMessageDialog(null, arr[qq][1],"error", JOptionPane.ERROR_MESSAGE);
+						
 
 					}
 					readresult();
@@ -1008,6 +855,12 @@ public class PorjectDan implements  ActionListener {
 					clearresu.setEnabled(true);
 					learshkuf.setEnabled(true);
 			}
+			else{
+			saveAs.setBackground(Color.RED);
+			saveAs.setForeground(Color.WHITE);
+			JOptionPane.showMessageDialog(null, "Error in Out Put (features): ","You neet to change the link", JOptionPane.ERROR_MESSAGE);
+			}	
+		}
 		
 		 if(e.getSource() == clearAll){
 			for(int r=0;r<5;r++)
@@ -1029,8 +882,9 @@ public class PorjectDan implements  ActionListener {
 			}
 			else{
 			//
+				
 				JOptionPane.showMessageDialog(null, arr[1][0], "Out Put ", JOptionPane.INFORMATION_MESSAGE);
-
+				
 			}
 
 		}
@@ -1050,6 +904,7 @@ public class PorjectDan implements  ActionListener {
 			//	JOptionPane.showMessageDialog(null, "this is empty", "no path ", JOptionPane.ERROR_MESSAGE);
 			}
 			else{
+				
 				Desktop dt = Desktop.getDesktop();
 				try {
 					dt.open( new File(arr[2][0]) );
@@ -1057,6 +912,9 @@ public class PorjectDan implements  ActionListener {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
+				ontology.setBackground(Color.WHITE);
+				ontology.setForeground(Color.BLACK);
+				
 			}
 		}
 		if(e.getSource() == ontologyStatuslink)
@@ -1129,69 +987,46 @@ public class PorjectDan implements  ActionListener {
 		
 	}
 
-	private void writeArr(java.lang.String string2) throws FileNotFoundException, UnsupportedEncodingException {
-		// TODO Auto-generated method stub
-		PrintWriter writer = new PrintWriter("array", "UTF-8");
-		//JOptionPane.showMessageDialog(null,  "yes: ");
-		writer.println(string2);
-		//writer.println("The second line");F
-		writer.close();
-
-	}
+	
 
 	private String checkREprin(String li) {
-		// TODO Auto-generated method stub
-		//if(checeheeee==1){
-		//	result="";
-		//	checeheeee=0;
-		//}
-		String[] out = li.split(" ");
-		//Root element of the doc is ontology
-		//for(int iiii=0;iiii<out.length;iiii++){
-			
-	//	if((out[3].equals("Root") && out[4].equals("element") && out[5].equals("of") ) || out[3].equals("Total") && out[4].equals("no") && out[5].equals("of")) //&& out[9].equals("ontology")) 
-		//	JOptionPane.showMessageDialog(null, "Root", "you need to insert:", JOptionPane.ERROR_MESSAGE);
-		//	li=" ";	
-		//if(out)
-
-				//return li;
-				
-			
 		
-		//for(int iiii=0;iiii<out.length;iiii++){
+		String[] out = li.split(" ");
+		
 			String d,dd;
 			if(out[1].equals("ERROR") && out[4].equals("Parsing")){
 					 d=out[out.length-1];
 					 
 					d= d.substring(5);
 					checkErrorB(d);
+					
 					// String removeCurrency=d.getText().toString().substring(3);
 					//JOptionPane.showMessageDialog(null, d , "ERROR:", JOptionPane.ERROR_MESSAGE);
 		
 		}
-			if(out[1].equals("ERROR") && out[4].equals("The") && out[5].equals("element")){
-				 dd=out[out.length-1];
-				 
+			if(out[1].equals("ERROR") && out[4].equals("XML") && out[5].equals("document")){
+				String as="";
+				for(int i=3;i<out.length;i++){
+					as=as+out[i] + " " ;
+											}
+				whatFix(as);
 				
-				whatFix(dd);
-				// String removeCurrency=d.getText().toString().substring(3);
-				//JOptionPane.showMessageDialog(null, d , "ERROR:", JOptionPane.ERROR_MESSAGE);
-	
+	}
+			
+			if(out[1].equals("ERROR") && out[4].equals("The") && out[5].equals("element")){
+				String as="";
+				for(int i=3;i<out.length;i++){
+					as=as+out[i] + " " ;
+											}
+				whatFix(as);
+				
+				
 	}
 			if(out[1].equals("ERROR") && out[3].equals("Root")){
-				
 				JOptionPane.showMessageDialog(null, "this problem dont can to fix", "ERROR:", JOptionPane.ERROR_MESSAGE);
-	
 	}
-	
 		lineError++;
-		return li;
-		//		JOptionPane.showMessageDialog(null, "delete", "you need to insert:", JOptionPane.ERROR_MESSAGE);
-		//	}
-				//break;
-		//if(out[3].equals("Root") && out[4].equals("element")&& out[5].equals("of") && out[5].equals("ontology") ){
-		//	JOptionPane.showMessageDialog(null, "perfect", "you need to insert:", JOptionPane.ERROR_MESSAGE);
-		
+		return li;	
 	}
 
 	private void whatFix(java.lang.String dd) {
@@ -1205,8 +1040,7 @@ public class PorjectDan implements  ActionListener {
 			//JOptionPane.showMessageDialog(null, "perfect", "TIP: ", JOptionPane.CANCEL_OPTION);
 			ontology.setBackground(Color.RED);
 			ontology.setBackground(Color.RED);
-		}
-		
+		}	
 	}
 
 	private void learn111() {
@@ -1224,12 +1058,6 @@ public class PorjectDan implements  ActionListener {
 		}
 	}
 
-	//}
-
-
-
-
-
 	private void dontlearn() {
 		// TODO Auto-generated method stub
 		lear.setBackground(Color.RED);
@@ -1245,8 +1073,6 @@ public class PorjectDan implements  ActionListener {
 		}
 	}
 
-	
-
 	private void ckeckstart() {
 
 		// TODO Auto-generated method stub
@@ -1256,28 +1082,6 @@ public class PorjectDan implements  ActionListener {
 		}
 		else
 			start.setEnabled(true);
-	}
-
-
-	private void writeresufalse() throws FileNotFoundException, UnsupportedEncodingException {
-		// TODO Auto-generated method stub
-		PrintWriter writer = new PrintWriter("result", "UTF-8");
-		//JOptionPane.showMessageDialog(null,  "yes: ");
-		writer.println("false");
-		//writer.println("The second line");F
-		writer.close();
-
-	}
-
-	private void writeres(String fun) throws FileNotFoundException, UnsupportedEncodingException {
-		// TODO Auto-generated method stub
-
-		PrintWriter writer = new PrintWriter("result", "UTF-8");
-		//JOptionPane.showMessageDialog(null,  "yes: ");
-		writer.println(fun);
-		//writer.println("The second line");F
-		writer.close();
-
 	}
 
 	private void writelern(java.lang.String string2) throws FileNotFoundException, UnsupportedEncodingException {
@@ -1292,14 +1096,6 @@ public class PorjectDan implements  ActionListener {
 
 	}
 
-
-
-
-
-
-
-
-
 	private void saveOneClick(java.lang.String string2){//insert 1
 		// TODO Auto-generated method stub
 		Scanner ss = null;
@@ -1307,15 +1103,12 @@ public class PorjectDan implements  ActionListener {
 			//notice the path is fully qualified path
 			try {
 				ss = new Scanner(new File(string2));
-				//JOptionPane.showMessageDialog(null,  "yes:goooddddd ");
-				//check=1;
+				
 				String dan=ss.nextLine();
 				foo = Integer.parseInt(dan);
-				//ss.close();
-
-				//JOptionPane.showMessageDialog(null,  dan);
+				
 			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}
 			while (ss.hasNext()) {
@@ -1356,33 +1149,6 @@ public class PorjectDan implements  ActionListener {
 		writer.close();
 	}
 
-
-
-
-
-	private java.lang.String shorttext(java.lang.String string2) {
-		// TODO Auto-generated method stub
-		String check=string2;
-		//int i=string2.length();
-		String res="",one="";
-		String[] parts = check.split("/");
-		//String part1 = parts[0]; // 004
-		//String part2 = parts[1]; // 034556
-		int i=0;
-		if(parts[i]!=""){
-			i++;
-		}
-		res=parts[i-1];
-		one=parts[0]+"/"+parts[1]+"/.../";
-
-		String end=one+res;
-		return end;
-	}
-
-
-
-
-
 	private java.lang.String checkAndSend(java.lang.String arr2) {
 		david=arr2;
 		return david;
@@ -1392,10 +1158,7 @@ public class PorjectDan implements  ActionListener {
 
 		JFrame.setDefaultLookAndFeelDecorated(true);
 		JFrame frame = new JFrame("GUI EDcode");
-		//JPanel tot = new JPanel();
-
-
-		//Create and set up the content pane.
+		
 		PorjectDan demo = new PorjectDan();
 		frame.setContentPane(demo.createContentPane());
 
@@ -1411,10 +1174,6 @@ public class PorjectDan implements  ActionListener {
 
 		select();
 	}
-
-
-
-
 
 	private static void read() {
 		// TODO Auto-generated method stub
